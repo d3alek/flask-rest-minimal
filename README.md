@@ -83,4 +83,4 @@ $ curl http://localhost:5000/todos/2?api_key=<API_KEY> -d "task=something differ
 
 [Flask Security](https://pythonhosted.org/Flask-Security/)
 
-[flask-migrate](https://flask-migrate.readthedocs.io/en/latest/):
+[flask-migrate](https://flask-migrate.readthedocs.io/en/latest/)
