@@ -21,7 +21,7 @@ class Role(Base, RoleMixin):
 class User(Base, UserMixin):
     id = Column(Integer, primary_key=True)
     email = Column(String(255), unique=True)
-    password = Column(String(255), nullable=False)
+    api_key = Column(String(255), nullable=False, unique=True)
     active = Column(Boolean, nullable=False)
     confirmed_at = Column(DateTime, nullable=True)
     roles = relationship('Role', secondary=roles_users,

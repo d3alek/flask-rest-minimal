@@ -48,7 +48,7 @@ $ DB_URL="postgresql://locahost/flask_minimal" FLASK_APP=src/app.py flask db mig
 $ python -c 'import os; print(os.urandom(16))'
 ```
 
-- `ADMIN_EMAIL`, `ADMIN_PASSWORD` с имейла и паролата на админа
+- `ADMIN_EMAIL`, `ADMIN_API_KEY` с имейла и паролата на админа
 
 ## Стартиране
 
@@ -58,22 +58,26 @@ $ DB_URL="postgresql://locahost/flask_minimal" FLASK_APP=src/app.py flask run
 
 ## Използване
 
+Замени `<API_KEY>` с `ADMIN_API_KEY` от `secret.py`
+
 ```
-$ curl http://localhost:5000/todos -d "task=something new" -X POST -v
+$ curl http://localhost:5000/todos?api_key=<API_KEY> -d "task=something new" -X POST -v
 ...
 $ curl http://localhost:5000/todos
 ...
 $ curl http://localhost:5000/todos/1
 ...
-$ curl http://localhost:5000/todos/1 -X DELETE -v
+$ curl http://localhost:5000/todos/1?api_key=<API_KEY> -X DELETE -v
 ...
-$ curl http://localhost:5000/todos -d "task=something new 2" -X POST -v
+$ curl http://localhost:5000/todos?api_key=<API_KEY> -d "task=something new 2" -X POST -v
 ...
-$ curl http://localhost:5000/todos/2 -d "task=something different 2" -X PUT -v
+$ curl http://localhost:5000/todos/2?api_key=<API_KEY> -d "task=something different 2" -X PUT -v
 ...
 ```
 
 ## Допълнителна информация
+
+[Flask](https://flask.pocoo.org/)
 
 [Flask RESTful](https://flask-restful.readthedocs.io/)
 
